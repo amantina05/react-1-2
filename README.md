@@ -533,12 +533,9 @@ Lets begin by opening `src/CartItem.js` and importing `prop-types` at the top of
 import React from "react";
 import PropTypes from 'prop-types';
 ```
-<<<<<<< HEAD
 
 We will then scroll to the bottom of the file and define the `propTypes` object for this component after the closing curly brace of the functional component.  This component is receiving a single prop: `item` which is an `Object` that has multiple product properties on it. We can specify the required properties for this object using the `PropTypes.shape` method and defining each required property of the `item Object` and the corresponding data type for each of those properties. Each item has the following properties with their associa
 
-=======
->>>>>>> eb203134ad36e35fe586f5657ea493018b209c86
 
 We will then scroll to the bottom of the file and define the `propTypes` for this component after the closing curly brace by referencing a propTypes property on the component .  This component is receiving a single prop: `item` which is an `Object` that has multiple product properties on it. We can specify the required properties that      
 </details>
