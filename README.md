@@ -51,7 +51,7 @@ _The `JSX` for `src/components/Product.js` is almost identical to the map in `sr
 Let's begin by creating a new file called `Product.js` inside of the `src/components` folder and create a `functional component` called `Product` inside of it.
 
 ```js
-import React from "react";
+import React from 'react';
 
 export default function Product(props) {}
 ```
@@ -59,7 +59,7 @@ export default function Product(props) {}
 Now that we have our `functional component` we are going to make some assumptions here. This `component` should expect to receive two `props`. One `prop` called `item` which will be a `product object` and another `prop` called `addToCart` which will be the `addToCart method` from `src/App.js`. With these assumptions, let's start by destructuring them off of the `props` argument.
 
 ```js
-import React from "react";
+import React from 'react';
 
 export default function Product(props) {
   const { item, addToCart } = props;
@@ -69,7 +69,7 @@ export default function Product(props) {
 With those assumptions out of the way, the `JSX` we need is almost exactly the same as the `JSX` we are already using in `src/App.js`. Let's move that `JSX` over into the `component` to start.
 
 ```js
-import React from "react";
+import React from 'react';
 
 export default function Product(props) {
   const { item, addToCart } = props;
@@ -91,7 +91,7 @@ export default function Product(props) {
 Now we can start taking away the pieces of code that don't make sense in this file. For starters, we no longer need a `key` on our most parent `div` because we aren't executing a map inside of `src/components/Product.js`. We can also strip away the `this` from `this.addToCart(item)` since that method is now being passed down as a prop.
 
 ```js
-import React from "react";
+import React from 'react';
 
 export default function Product(props) {
   const { item, addToCart } = props;
@@ -121,7 +121,7 @@ export default function Product(props) {
 <br />
 
 ```js
-import React from "react";
+import React from 'react';
 
 export default function Product(props) {
   const { item, addToCart } = props;
@@ -206,9 +206,9 @@ addToCart = item => {
 <br />
 
 ```js
-import React, { Component } from "react";
-import Product from "./components/Product";
-import "./App.css";
+import React, { Component } from 'react';
+import Product from './components/Product';
+import './App.css';
 
 export default class App extends Component {
   constructor() {
@@ -220,25 +220,25 @@ export default class App extends Component {
           id: 1,
           title: "Fisherman's Hat",
           description:
-            "Headgear commonly used by fishermen. Increases fishing skill marginally.",
+            'Headgear commonly used by fishermen. Increases fishing skill marginally.',
           price: 12.99,
-          imageUrl: "https://via.placeholder.com/150x150"
+          imageUrl: 'https://via.placeholder.com/150x150'
         },
         {
           id: 2,
-          title: "Metal Hat",
-          description: "Uncomfortable, but sturdy.",
+          title: 'Metal Hat',
+          description: 'Uncomfortable, but sturdy.',
           price: 8.99,
-          imageUrl: "https://via.placeholder.com/150x150"
+          imageUrl: 'https://via.placeholder.com/150x150'
         }
       ],
       beachGear: [
         {
           id: 3,
-          title: "Tent",
-          description: "Portable shelter.",
+          title: 'Tent',
+          description: 'Portable shelter.',
           price: 32.99,
-          imageUrl: "https://via.placeholder.com/150x150"
+          imageUrl: 'https://via.placeholder.com/150x150'
         }
       ]
     };
@@ -252,7 +252,7 @@ export default class App extends Component {
 
   checkout = () => {
     this.setState({ cart: [] });
-    alert("Purchase is complete!");
+    alert('Purchase is complete!');
   };
 
   render() {
@@ -323,7 +323,7 @@ export default class App extends Component {
 Let's begin by creating a new file called `CartItem.js` inside of the `src/components` folder and create a `functional component` called `CartItem` inside of it.
 
 ```js
-import React from "react";
+import React from 'react';
 
 export default function CartItem(props) {}
 ```
@@ -331,7 +331,7 @@ export default function CartItem(props) {}
 Just like we did earlier, we'll destructure `item` off of `props` and then `render` the `JSX` from the `cart section`'s map in `src/App.js`. We'll then strip away the `key prop` since we are not mapping inside of `CartItem`.
 
 ```js
-import React from "react";
+import React from 'react';
 
 export default function Product(props) {
   const { item } = props;
@@ -391,7 +391,7 @@ Now that we have access to the `CartItem component`, we can replace the `JSX` in
 <br />
 
 ```js
-import React from "react";
+import React from 'react';
 
 export default function CartItem(props) {
   const { item } = props;
@@ -417,10 +417,10 @@ export default function CartItem(props) {
 <br />
 
 ```js
-import React, { Component } from "react";
-import Product from "./components/Product";
-import CartItem from "./components/CartItem";
-import "./App.css";
+import React, { Component } from 'react';
+import Product from './components/Product';
+import CartItem from './components/CartItem';
+import './App.css';
 
 export default class App extends Component {
   constructor() {
@@ -432,25 +432,25 @@ export default class App extends Component {
           id: 1,
           title: "Fisherman's Hat",
           description:
-            "Headgear commonly used by fishermen. Increases fishing skill marginally.",
+            'Headgear commonly used by fishermen. Increases fishing skill marginally.',
           price: 12.99,
-          imageUrl: "https://via.placeholder.com/150x150"
+          imageUrl: 'https://via.placeholder.com/150x150'
         },
         {
           id: 2,
-          title: "Metal Hat",
-          description: "Uncomfortable, but sturdy.",
+          title: 'Metal Hat',
+          description: 'Uncomfortable, but sturdy.',
           price: 8.99,
-          imageUrl: "https://via.placeholder.com/150x150"
+          imageUrl: 'https://via.placeholder.com/150x150'
         }
       ],
       beachGear: [
         {
           id: 3,
-          title: "Tent",
-          description: "Portable shelter.",
+          title: 'Tent',
+          description: 'Portable shelter.',
           price: 32.99,
-          imageUrl: "https://via.placeholder.com/150x150"
+          imageUrl: 'https://via.placeholder.com/150x150'
         }
       ]
     };
@@ -464,7 +464,7 @@ export default class App extends Component {
 
   checkout = () => {
     this.setState({ cart: [] });
-    alert("Purchase is complete!");
+    alert('Purchase is complete!');
   };
 
   render() {
@@ -503,7 +503,38 @@ export default class App extends Component {
   }
 }
 ```
+</details>
 
+## Part 2
+
+### Summary
+
+In this part we will start using the `prop-types` library to provide better documentation and an enhanced debugging experience to the  `CartItem` and `Product` components.
+
+## Step 1
+
+- Install the `prop-types` library by running `npm install prop-types`.
+
+## Step 2
+
+- Open `src/CartItem.js`.
+- import the `prop-types` library.
+- Define the component `propTypes` after the ending curly brace of the functional component definititon.
+- Provide the appropriate propTypes for the `item` prop being passed into the `CartItem` component.
+
+<details>
+
+<summary>Detailed Instructions</summary>
+<br />
+
+Lets begin by opening `src/CartItem.js` and importing `prop-types` at the top of the file.
+
+```js
+import React from "react";
+import PropTypes from 'prop-types';
+```
+
+We will then scroll to the bottom of the file and define the `propTypes` for this component after the closing curly brace by referencing a propTypes property on the component .  This component is receiving a single prop: `item` which is an `Object` that has multiple product properties on it. We can specify the required properties that      
 </details>
 
 ## Contributions
