@@ -548,6 +548,7 @@ Product.propTypes = {
   })
 }
 ```
+</details>
 
 ## Step 3
 
