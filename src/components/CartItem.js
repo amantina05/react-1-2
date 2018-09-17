@@ -1,17 +1,28 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import Text from './Text'
+import PropTypes from 'prop-types'
 
 export default function CartItem(props) {
   const { item } = props;
 
   return (
-    <div class="product">
+    <div className="product">
       <img src={item.imageUrl} />
       <div className="product-info">
-        <h4>{item.title}</h4>
-        <p>{item.description}</p>
-        <p>{item.price}</p>
+        <Text isHeader={true} text={item.title} />
+        <Text isHeader={false} text={item.description} />
+        <Text isHeader={false} text={item.price} />
       </div>
     </div>
   );
+}
+
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    imageUrl: PropTypes.string.isRequired
+  })
 }
