@@ -6,7 +6,7 @@ In this project, we will create an e-commerce React application from start to fi
 
 # Day 2
 
-On this day, we will be refactoring some of our code to take advantage of some of the tools that React has to offer. You should have made it through at least part 2 of Day 1 in order to proceed with this project. We will be using reusable `functional components` to follow the DRY principle, which is, don't repeat yourself. We will pass `props` into our reusable `components`. At the end of this project, you should have a better understanding of the following concepts:
+On this day, we will be refactoring some of our code to take advantage of some of the tools that React has to offer. You should have made it through at least part 2 of Day 1 in order to proceed with this project. We will be using reusable `functional components` to follow the DRY (don't repeat yourself) principle. We will pass `props` into our reusable `components`. At the end of this project, you should have a better understanding of the following concepts:
 
 - Props
 - PropTypes
@@ -561,6 +561,7 @@ Product.propTypes = {
 
 <summary>Detailed Instructions</summary>
 <br />
+
 Now we will basically repeat the process of defining the `propTypes` in the `Product` component in the `CartItem` component. Lets begin by opening `src/CartItem.js` and importing `prop-types` at the top of the file.
 
 ```js
@@ -597,6 +598,7 @@ CartItem.propTypes = {
 
 <summary>Detailed Instructions</summary>
 <br />
+
 Lets start by creating a new `Text.js` file inside of our `src/components` folder. Create a `functional component` inside our newly created file. This `Text` component should receive two `props`: `isHeader`(boolean) and `text`(string or number). We can then destructure those props after the function declaration as a clean way to use those props as variables.
 
 ```js
@@ -639,13 +641,13 @@ Text.propTypes = {
 We can now use our new `Text` component inside the `CartItem` and `Product` components. Open `src/components/CartItem.js`, import the `Text` component after the other import.
 ```js
 import React from "react";
-import Text from './Text'
+import Text from './Text';
 ```
 We can now replace any `h4` or `p` tag with our newly imported `Text` component. For any `h4` tag, we want to set the `isHeader` prop to true, otherwise we want the `isHeader` prop to be set to false. We also want to set the information in between the `h4` or `p` tags to the `text` prop. 
 
 ```js
 import React from "react";
-import Text from './Text'
+import Text from './Text';
 import PropTypes from 'prop-types'
 
 export default function CartItem(props) {
@@ -756,7 +758,7 @@ Product.propTypes = {
 
 ```js
 import React from "react";
-import Text from './Text'
+import Text from './Text';
 import PropTypes from 'prop-types'
 
 export default function CartItem(props) {
