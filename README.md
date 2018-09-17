@@ -510,7 +510,7 @@ export default class App extends Component {
 
 ### Summary
 
-In this part we will start using the `prop-types` library to provide better documentation and an enhanced debugging experience to the  `CartItem` and `Product` components. We will also create a new `<Text>` component that will replace our our `<h4>` and `<p>` tags based off of the `props` that it receives. 
+In this part we will start using the `prop-types` library to provide better documentation and an enhanced debugging experience to the  `CartItem` and `Product` components. We will also create a new `Text` component that will replace our our `<h4>` and `<p>` tags based off of the `props` that it receives. 
 
 ## Step 1
 
