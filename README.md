@@ -826,6 +826,8 @@ Text.propTypes = {
 ```
 </details>
 
+<br>
+
 <img src="readme-assets/react-1-2-text-cart.gif" />
 
 # Part 3 - Black Diamond
