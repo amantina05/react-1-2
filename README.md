@@ -1,12 +1,12 @@
 <img src="https://s3.amazonaws.com/devmountain/readme-logo.png" width="250" align="right">
 
-# Project Summary
-
-In this project, we will create an e-commerce React application from start to finish. We will start with the basic file structure from `create-react-app`, with the only difference being that `src/App.js` is empty. We will be working on this app over the course of three days. Each day's project is divided into four parts, with the first step being comparable to that day's mini-project and the following steps adding more features or implementing new patterns. You should expect to be able to complete the first two steps on each day, while steps three and four will offer a challenge.
-
 # Day 2
 
-On this day, we will be refactoring some of our code to take advantage of some of the tools that React has to offer. You should have made it to at least part 2 of Day 1 in order to proceed with this project. We will be using reusable `functional components` to follow the DRY principle, which is, don't repeat yourself. We will pass `props` into our reusable `components`. At the end of this project, you should have a better understanding of the following concepts:
+### Day 1 Continuation
+
+For this project, we will be using the same project from the previous day lecture, and we will be refactoring our code to take advantage of some of the tools that React has to offer. If you want to use your previous project you can do so and just follow the readme on this page (no need to clone this repo), but it is expected that you finished parts 1 and 2 of Day 1. If you didn't get that far or just want to start fresh we have provided code that will put you at the correct starting point, just follow the instructions below for cloning the project.
+
+In this project we will be using reusable `functional components` to follow the DRY principle, which is, don't repeat yourself. We will pass `props` into our reusable `components`. At the end of this project, you should have a better understanding of the following concepts:
 
 - Props
 - PropTypes
@@ -18,6 +18,13 @@ On this day, we will be refactoring some of our code to take advantage of some o
 <a href="https://DevMountain.github.io/react-1-2">Click Me</a>
 
 <img src="readme-assets/finsihed.JPG" />
+
+# Cloning (Optional)
+
+- `Fork` this repository.
+- `clone` this repo onto your computer.
+- `cd` into this repository and run `npm i`.
+- if you did that successfully you will see a `node_modules` folder in the same directory as the `src` and `public` folder.
 
 # Part 1
 
