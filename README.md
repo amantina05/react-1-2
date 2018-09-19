@@ -19,7 +19,7 @@ On this day, we will be refactoring some of our code to take advantage of some o
 
 <img src="#" />
 
-## Part 1
+# Part 1
 
 ### Summary
 
@@ -27,19 +27,22 @@ In this part we will create two functional components so that we don't have to r
 
 ## Step 1
 
-- Create a new `components` folder inside the `src` folder.
+- Create a `components` folder inside the `src` folder.
 
 ## Step 2
 
-- Create a new `Product functional component` inside the `src/components` folder.
-- Use `props` and `JSX` to `render` a `product`:
-  - Use an `img` element for the `product`'s `imageUrl`.
-  - Use a `h4` element for the `product`'s `title`.
-  - Use a `p` element for the `product`'s `description`.
-  - Use a `p` element for the `product`'s `price`.
-  - Use a `button` element that says "Add to Cart":
-    - Add an `onClick` handler that calls `addToCart` off of `props`.
-    - Remember to pass in the `product` as an `argument`.
+- Create `Product.js` inside the `src/components` folder.
+- inside the `Product.js` file make a functional component with same name as the file.
+- Use the values off of the `props` object passed into the function to render a product.
+  - All the properties about the product will be on props.item.`property`, it may be a good idea to destructure those values.
+  - (At this moment we are not passing down props but we will in the next step):
+    - Use an `img` element for the product's `imageUrl`.
+    - Use a `h4` element for the product's `title`.
+    - Use a `p` element for the product's `description`.
+    - Use a `p` element for the product's `price`.
+    - Use a `button` element that says "Add to Cart":
+      - Add an `onClick` handler that calls `addToCart` off of `props`.
+      - Remember to pass in the product as an `argument`.
 
 _The `JSX` for `src/components/Product.js` is almost identical to the map in `src/App.js`_
 
@@ -48,7 +51,7 @@ _The `JSX` for `src/components/Product.js` is almost identical to the map in `sr
 <summary> Detailed Instructions </summary>
 <br />
 
-Let's begin by creating a new file called `Product.js` inside of the `src/components` folder and create a `functional component` called `Product` inside of it.
+Let's begin by creating a new file called `Product.js` inside of the `src/components` folder and create a `functional component` called `Product` inside of it. Make sure it includes props in its parameters.
 
 ```js
 import React from 'react';
@@ -104,7 +107,6 @@ export default function Product(props) {
         <h4>{item.title}</h4>
         <p>{item.description}</p>
         <p>{item.price}</p>
-
         <button onClick={() => addToCart(item)}>Add to Cart</button>
       </div>
     </div>
@@ -134,7 +136,6 @@ export default function Product(props) {
         <h4>{item.title}</h4>
         <p>{item.description}</p>
         <p>{item.price}</p>
-
         <button onClick={() => addToCart(item)}>Add to Cart</button>
       </div>
     </div>
@@ -147,7 +148,7 @@ export default function Product(props) {
 ## Step 3
 
 - Open `src/App.js`.
-- Import the `Product component`.
+- Import the `Product` component.
 - Scroll down to the `products section`:
   - Replace the current map's `JSX` with rendering a `Product component`.
   - Remember to pass down an `item` and `addToCart prop`.
@@ -159,7 +160,7 @@ export default function Product(props) {
 
 <br />
 
-Let's beging by opening `src/App.js` and `import` the `Product component`.
+Let's begin by opening `src/App.js` and `import` the `Product` component.
 
 ```js
 import React, { Component } from "react";
@@ -170,7 +171,7 @@ export default class App extends Component {
 ...
 ```
 
-Now that we have access to the `Product component`, we can replace the `JSX` in the `map` for our `products section`. Remember that the `Product component` is expecting an `item` and `addToCart prop`. Also, we will still need to use a `key prop` here since we are inside a map.
+Now that we have access to the `Product` component, we can replace the `JSX` in the `map` for our `products section`. Remember that the `Product` component is expecting an `item` and `addToCart prop`. Also, we will still need to use a `key prop` here since we are inside a map.
 
 ```js
 <section className="products">
@@ -187,7 +188,7 @@ Now that we have access to the `Product component`, we can replace the `JSX` in 
 </section>
 ```
 
-Lastly, we'll need to fix the context of `this` for the `addToCart` method. We can either bind it in the `constructor method`, use an `arrow function`, or turn the `addToCart method` into an `arrow function`.
+Lastly, we'll need to fix the context of `this` for the `addToCart` method. We can either bind it in the `constructor method`, use an `arrow function`, or turn the `addToCart` method into an `arrow function`.
 
 ```js
 addToCart = item => {
@@ -303,12 +304,19 @@ export default class App extends Component {
 
 ## Step 4
 
-- Create a new `CartItem functional component` inside the `src/components` folder.
-- Use `props` and `JSX` to `render` a `product`:
-  - Use an `img` element for the `product`'s `imageUrl`.
-  - Use a `h4` element for the `product`'s `title`.
-  - Use a `p` element for the `product`'s `description`.
-  - Use a `p` element for the `product`'s `price`.
+- Use the values off of the `props` object passed into the function to render a product.
+  - All the properties about the product will be on props.item.`property`, it may be a good idea to destructure those values.
+  - (At this moment we are not passing down props but we will in the next step):
+
+- Create `CartItem.js` inside the `src/components` folder.
+- inside the `CartItem.js` file make a functional component with same name as the file.
+- Use the values off of the `props` object passed into the function to render a product.
+  - All the properties about the product will be on props.item.`property`, it may be a good idea to destructure those values.
+  - (At this moment we are not passing down props but we will in the next step):
+    - Use an `img` element for the `product`'s `imageUrl`.
+    - Use a `h4` element for the `product`'s `title`.
+    - Use a `p` element for the `product`'s `description`.
+    - Use a `p` element for the `product`'s `price`.
 - Open `src/App.js`.
 - Import the `CartItem component`.
 - Scroll down to the `cart section`:
@@ -350,7 +358,7 @@ export default function Product(props) {
 }
 ```
 
-Now that our `CartItem component` is ready, let's open `src/App.js` and `import` it.
+Now that our `CartItem` component is ready, let's open `src/App.js` and `import` it.
 
 ```js
 import React, { Component } from "react";
@@ -362,7 +370,7 @@ export default class App extends Component {
 ...
 ```
 
-Now that we have access to the `CartItem component`, we can replace the `JSX` in the `map` for our `cart section`. Remember that the `CartItem component` is expecting an `item prop`. Also, we will still need to use a `key prop` here since we are inside a map.
+Now that we have access to the `CartItem` component, we can replace the `JSX` in the `map` for our `cart section`. Remember that the `CartItem component` is expecting an `item prop`. Also, we will still need to use a `key prop` here since we are inside a map.
 
 ```js
 <section className="cart">
@@ -389,7 +397,6 @@ Now that we have access to the `CartItem component`, we can replace the `JSX` in
 <details>
 
 <summary> <code> src/CartItem.js </code> </summary>
-<br />
 
 ```js
 import React from 'react';
@@ -415,7 +422,6 @@ export default function CartItem(props) {
 <details>
 
 <summary> <code> src/App.js </code> </summary>
-<br />
 
 ```js
 import React, { Component } from 'react';
