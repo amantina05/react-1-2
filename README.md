@@ -301,6 +301,8 @@ export default class App extends Component {
 
 </details>
 
+<br>
+
 <img src="readme-assets/react-1-2-functional-product.gif" />
 
 ## Step 4
@@ -513,6 +515,8 @@ export default class App extends Component {
 ```
 
 </details>
+
+<br>
 
 <img src="readme-assets/react-1-2-functional-cart.gif" />
 
