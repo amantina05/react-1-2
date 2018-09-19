@@ -15,7 +15,7 @@ On this day, we will be refactoring some of our code to take advantage of some o
 
 ## Live Example
 
-<a href="https://DevMountain.github.io/react-1-1">Click Me</a>
+<a href="https://DevMountain.github.io/react-1-2">Click Me</a>
 
 <img src="readme-assets/finsihed.JPG" />
 
@@ -838,7 +838,22 @@ Text.propTypes = {
 
 ### Summary
 
-In this part we will add in the remove from cart function to the cart item
+In this part we will add in the remove from cart function to the `CartItem` component. We will also need to add onto the prop types object to account for this.
+
+## Step 1
+
+- Open `src/App.js`.
+- If you have not already then you will need to create a method on `App.js` called `deleteFromCart`.
+- This Method will take in an ID of the item you want to remove from the cart.
+- Have it remove the item from state then `setState` with the new array.
+- Because we are moving this method to another component make sure you bind it.
+- Then pass it down as a prop to the `CartItem` component.
+
+## Step 2
+
+- Open `src/components/CartItem`.
+- Add a button that says `remove from cart` that when clicked runs the deleteFromCart prop.
+- Also make sure to add it to your propType object at the bottom of the file.
 
 # Part 4 - Black Diamond
 
@@ -851,15 +866,16 @@ In this part we will add a search bar which can filter the list of products. We 
 - Open `src/App.js`
 - In the products section under the header in App.js, create an input that will be our search bar. 
   - Store its value on state.
-  - Create an on-change event listener that will update state with the user input.
+  - Create an `onChange` event listener that will update state with the user input.
 
 ## Step 2
 
 - Change the code where we map over products to display so that we are filtering based on the user input string if the user has typed anything.
 
 ## Step 3
-- Add a navbar with a two buttons at the top of the `src/App.js`. 
-- The user should be able to toggle between Product View and Cart View, by changing a boolean value on state. 
+
+- Add a navbar with a button at the top of the `src/App.js`.
+- The user should be able to toggle between Product View and Cart View, by changing a boolean value on state.
 - Use conditional rendering (with the ternary operator), so that only one view is displayed at a time.
 
 ## Contributions
