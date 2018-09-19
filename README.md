@@ -838,7 +838,7 @@ Text.propTypes = {
 
 ### Summary
 
-In this part we will add in the remove from cart function to the `CartItem` component. We will also need to add onto the prop types object to account for this.
+In this part we will add in the remove from cart function to the `CartItem` component. We will also need to add onto the prop types object to account for this. We will also add in the functionality to change the view of each card.
 
 ## Step 1
 
@@ -854,6 +854,16 @@ In this part we will add in the remove from cart function to the `CartItem` comp
 - Open `src/components/CartItem`.
 - Add a button that says `remove from cart` that when clicked runs the deleteFromCart prop.
 - Also make sure to add it to your propType object at the bottom of the file.
+
+## Step 3
+
+- Open `src/App.js`.
+- If you have not already then you will need to create a method on `App.js` called `handleToggleView`.
+  - this function will change the way the product cards are displayed by toggling a boolean on state.
+- then you will need to pass that value down as a prop into each `Product` component.
+- on one of the divs inside the `Product.js` you will need to turn the `className` into a ternary.
+  - have it toggle between two different class names to based on the value passed down by props.
+- Don't forget to also add the new prop to the `Prop.Types`
 
 # Part 4 - Black Diamond
 

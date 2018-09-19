@@ -8,6 +8,7 @@ export default class App extends Component {
     super();
     this.state = {
       cardView: true,
+      mainView: true,
       cart: [],
       address: "",
       creditCard: "",
@@ -98,13 +99,17 @@ export default class App extends Component {
     this.setState({ cardView: !this.state.cardView });
   };
 
+  handleTogglePage = () => {
+    this.setState({ mainView: !this.state.mainView });
+  };
+
   render() {
     return (
       <div className="App">
-        <nav className={this.state.cardView ? "black" : "grey"}>
-          <button onClick={() => this.handleToggleView()}>Change View</button>
+        <nav className={this.state.mainView ? "black" : "grey"}>
+          <button onClick={() => this.handleTogglePage()}>Change Page</button>
         </nav>
-        { this.state.cardView ? (
+        { this.state.mainView ? (
         <section className="products">
           <h1>Products</h1>
           <label>
@@ -118,14 +123,14 @@ export default class App extends Component {
               if(this.state.search) {
                 if(item.title.toLowerCase().includes(this.state.search.toLowerCase())) {
                   return (
-                    <Product key={item.id} item={item} addToCart = {this.addToCart}/>
+                    <Product key={item.id} item={item} addToCart = {this.addToCart} view = {this.state.cardView}/>
                   )
                 } else {
                   return
                 }
               }
               return (
-                <Product key={item.id} item={item} addToCart = {this.addToCart}/>
+                <Product key={item.id} item={item} addToCart = {this.addToCart} view = {this.state.cardView}/>
               )
             })
           }
@@ -135,14 +140,14 @@ export default class App extends Component {
               if(this.state.search) {
                 if(item.title.toLowerCase().includes(this.state.search.toLowerCase())) {
                   return (
-                    <Product key={item.id} item={item} addToCart = {this.addToCart}/>
+                    <Product key={item.id} item={item} addToCart = {this.addToCart} view = {this.state.cardView}/>
                   )
                 } else {
                   return
                 }
               }
               return (
-                <Product key={item.id} item={item} addToCart = {this.addToCart}/>
+                <Product key={item.id} item={item} addToCart = {this.addToCart} view = {this.state.cardView}/>
               )
             })
           }

@@ -2,10 +2,10 @@ import React from 'react';
 import Text from './Text';
 
 function Product(props) {
-  const { item, addToCart } = props;
+  const { item, addToCart, view } = props;
 
   return (
-    <div className="product">
+    <div className={view ? 'product' : 'product-list'}>
       <img src={item.imageUrl} />
       <div className="product-info">
         <Text isHeader text={item.title} />
