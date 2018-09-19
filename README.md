@@ -6,7 +6,7 @@ In this project, we will create an e-commerce React application from start to fi
 
 # Day 2
 
-On this day, we will be refactoring some of our code to take advantage of some of the tools that React has to offer. You should have made it through at least part 2 of Day 1 in order to proceed with this project. We will be using reusable `functional components` to follow the DRY (don't repeat yourself) principle. We will pass `props` into our reusable `components`. At the end of this project, you should have a better understanding of the following concepts:
+On this day, we will be refactoring some of our code to take advantage of some of the tools that React has to offer. You should have made it to at least part 2 of Day 1 in order to proceed with this project. We will be using reusable `functional components` to follow the DRY principle, which is, don't repeat yourself. We will pass `props` into our reusable `components`. At the end of this project, you should have a better understanding of the following concepts:
 
 - Props
 - PropTypes
@@ -17,7 +17,7 @@ On this day, we will be refactoring some of our code to take advantage of some o
 
 <a href="https://DevMountain.github.io/react-1-2">Click Me</a>
 
-<img src="#" />
+<img src="readme-assets/finsihed.JPG" />
 
 # Part 1
 
@@ -54,7 +54,7 @@ _The `JSX` for `src/components/Product.js` is almost identical to the map in `sr
 Let's begin by creating a new file called `Product.js` inside of the `src/components` folder and create a `functional component` called `Product` inside of it. Make sure it includes props in its parameters.
 
 ```js
-import React from 'react';
+import React from "react";
 
 export default function Product(props) {}
 ```
@@ -62,7 +62,7 @@ export default function Product(props) {}
 Now that we have our `functional component` we are going to make some assumptions here. This `component` should expect to receive two `props`. One `prop` called `item` which will be a `product object` and another `prop` called `addToCart` which will be the `addToCart method` from `src/App.js`. With these assumptions, let's start by destructuring them off of the `props` argument.
 
 ```js
-import React from 'react';
+import React from "react";
 
 export default function Product(props) {
   const { item, addToCart } = props;
@@ -72,7 +72,7 @@ export default function Product(props) {
 With those assumptions out of the way, the `JSX` we need is almost exactly the same as the `JSX` we are already using in `src/App.js`. Let's move that `JSX` over into the `component` to start.
 
 ```js
-import React from 'react';
+import React from "react";
 
 export default function Product(props) {
   const { item, addToCart } = props;
@@ -94,14 +94,13 @@ export default function Product(props) {
 Now we can start taking away the pieces of code that don't make sense in this file. For starters, we no longer need a `key` on our most parent `div` because we aren't executing a map inside of `src/components/Product.js`. We can also strip away the `this` from `this.addToCart(item)` since that method is now being passed down as a prop.
 
 ```js
-import React from 'react';
+import React from "react";
 
-export default function Product(props) {
 export default function Product(props) {
   const { item, addToCart } = props;
 
   return (
-    <div className="product">
+    <div class="product">
       <img src={item.imageUrl} />
       <div className="product-info">
         <h4>{item.title}</h4>
@@ -124,13 +123,13 @@ export default function Product(props) {
 <br />
 
 ```js
-import React from 'react';
+import React from "react";
 
 export default function Product(props) {
   const { item, addToCart } = props;
 
   return (
-    <div className="product">
+    <div class="product">
       <img src={item.imageUrl} />
       <div className="product-info">
         <h4>{item.title}</h4>
@@ -208,9 +207,9 @@ addToCart = item => {
 <br />
 
 ```js
-import React, { Component } from 'react';
-import Product from './components/Product';
-import './App.css';
+import React, { Component } from "react";
+import Product from "./components/Product";
+import "./App.css";
 
 export default class App extends Component {
   constructor() {
@@ -222,25 +221,25 @@ export default class App extends Component {
           id: 1,
           title: "Fisherman's Hat",
           description:
-            'Headgear commonly used by fishermen. Increases fishing skill marginally.',
+            "Headgear commonly used by fishermen. Increases fishing skill marginally.",
           price: 12.99,
-          imageUrl: 'https://via.placeholder.com/150x150'
+          imageUrl: "https://via.placeholder.com/150x150"
         },
         {
           id: 2,
-          title: 'Metal Hat',
-          description: 'Uncomfortable, but sturdy.',
+          title: "Metal Hat",
+          description: "Uncomfortable, but sturdy.",
           price: 8.99,
-          imageUrl: 'https://via.placeholder.com/150x150'
+          imageUrl: "https://via.placeholder.com/150x150"
         }
       ],
       beachGear: [
         {
           id: 3,
-          title: 'Tent',
-          description: 'Portable shelter.',
+          title: "Tent",
+          description: "Portable shelter.",
           price: 32.99,
-          imageUrl: 'https://via.placeholder.com/150x150'
+          imageUrl: "https://via.placeholder.com/150x150"
         }
       ]
     };
@@ -254,7 +253,7 @@ export default class App extends Component {
 
   checkout = () => {
     this.setState({ cart: [] });
-    alert('Purchase is complete!');
+    alert("Purchase is complete!");
   };
 
   render() {
@@ -302,6 +301,10 @@ export default class App extends Component {
 
 </details>
 
+<br>
+
+<img src="readme-assets/react-1-2-functional-product.gif" />
+
 ## Step 4
 
 - Use the values off of the `props` object passed into the function to render a product.
@@ -332,7 +335,7 @@ export default class App extends Component {
 Let's begin by creating a new file called `CartItem.js` inside of the `src/components` folder and create a `functional component` called `CartItem` inside of it.
 
 ```js
-import React from 'react';
+import React from "react";
 
 export default function CartItem(props) {}
 ```
@@ -340,13 +343,13 @@ export default function CartItem(props) {}
 Just like we did earlier, we'll destructure `item` off of `props` and then `render` the `JSX` from the `cart section`'s map in `src/App.js`. We'll then strip away the `key prop` since we are not mapping inside of `CartItem`.
 
 ```js
-import React from 'react';
+import React from "react";
 
 export default function Product(props) {
   const { item } = props;
 
   return (
-    <div className="product">
+    <div class="product">
       <img src={item.imageUrl} />
       <div className="product-info">
         <h4>{item.title}</h4>
@@ -399,13 +402,13 @@ Now that we have access to the `CartItem` component, we can replace the `JSX` in
 <summary> <code> src/CartItem.js </code> </summary>
 
 ```js
-import React from 'react';
+import React from "react";
 
 export default function CartItem(props) {
   const { item } = props;
 
   return (
-    <div className="product">
+    <div class="product">
       <img src={item.imageUrl} />
       <div className="product-info">
         <h4>{item.title}</h4>
@@ -424,10 +427,10 @@ export default function CartItem(props) {
 <summary> <code> src/App.js </code> </summary>
 
 ```js
-import React, { Component } from 'react';
-import Product from './components/Product';
-import CartItem from './components/CartItem';
-import './App.css';
+import React, { Component } from "react";
+import Product from "./components/Product";
+import CartItem from "./components/CartItem";
+import "./App.css";
 
 export default class App extends Component {
   constructor() {
@@ -439,25 +442,25 @@ export default class App extends Component {
           id: 1,
           title: "Fisherman's Hat",
           description:
-            'Headgear commonly used by fishermen. Increases fishing skill marginally.',
+            "Headgear commonly used by fishermen. Increases fishing skill marginally.",
           price: 12.99,
-          imageUrl: 'https://via.placeholder.com/150x150'
+          imageUrl: "https://via.placeholder.com/150x150"
         },
         {
           id: 2,
-          title: 'Metal Hat',
-          description: 'Uncomfortable, but sturdy.',
+          title: "Metal Hat",
+          description: "Uncomfortable, but sturdy.",
           price: 8.99,
-          imageUrl: 'https://via.placeholder.com/150x150'
+          imageUrl: "https://via.placeholder.com/150x150"
         }
       ],
       beachGear: [
         {
           id: 3,
-          title: 'Tent',
-          description: 'Portable shelter.',
+          title: "Tent",
+          description: "Portable shelter.",
           price: 32.99,
-          imageUrl: 'https://via.placeholder.com/150x150'
+          imageUrl: "https://via.placeholder.com/150x150"
         }
       ]
     };
@@ -471,7 +474,7 @@ export default class App extends Component {
 
   checkout = () => {
     this.setState({ cart: [] });
-    alert('Purchase is complete!');
+    alert("Purchase is complete!");
   };
 
   render() {
@@ -510,13 +513,18 @@ export default class App extends Component {
   }
 }
 ```
+
 </details>
 
-## Part 2
+<br>
+
+<img src="readme-assets/react-1-2-functional-cart.gif" />
+
+# Part 2
 
 ### Summary
 
-In this part we will start using the `prop-types` library to provide better documentation and an enhanced debugging experience to the  `CartItem` and `Product` components. We will also create a new `Text` component that will replace our our `<h4>` and `<p>` tags based off of the `props` that it receives. 
+In this part we will start using the `prop-types` library to provide better documentation and an enhanced debugging experience to the `CartItem` and `Product` components. We will also create a new `Text` component that will replace our our `<h4>` and `<p>` tags based off of the `props` that it receives.
 
 ## Step 1
 
@@ -524,9 +532,9 @@ In this part we will start using the `prop-types` library to provide better docu
 
 ## Step 2
 
-- Open `src/Product.js`.
+- Open `src/components/Product.js`.
 - import the `prop-types` library.
-- Define the component `propTypes` after the ending curly brace of the functional component definititon.
+- Define the component `propTypes` after the ending curly brace of the functional component definition.
 - Provide the appropriate propTypes for the `item` prop being passed into the `Product` component.
 
 <details>
@@ -534,14 +542,14 @@ In this part we will start using the `prop-types` library to provide better docu
 <summary>Detailed Instructions</summary>
 <br />
 
-Lets begin by opening `src/Product.js` and importing `prop-types` at the top of the file.
+Lets begin by opening `src/components/Product.js` and importing `prop-types` at the top of the file.
 
 ```js
 import React from "react";
 import PropTypes from 'prop-types';
 ```
 
-We will then scroll to the bottom of the file and define the `propTypes` object for this component after the closing curly brace of the functional component.  This component is receiving a single prop: `item` which is an `Object` that has multiple product properties on it. We can specify the required properties for this object using the `PropTypes.shape` method and defining each required property of the `item` object and the corresponding data type for each of those properties. Each `item` has the following properties with their associated data type: id-`Number`, title-`String`, description-`String`, price-`Number`, imageUrl-`String`. We can mark each property on the object as required so that we will be warned if any of those properties are missing.
+We will then scroll to the bottom of the file and define the `propTypes` object for this component after the closing curly brace of the functional component.  This component is receiving two props: `item` which is an `Object` that has multiple product properties on it, and `addToCart` which is a function. We can specify the required properties for the item object using the `PropTypes.shape` method and defining each required property of the `item` object and the corresponding data type for each of those properties. Each `item` has the following properties with their associated data type: id-`Number`, title-`String`, description-`String`, price-`Number`, imageUrl-`String`. Then we want to add the addToCart function, it too is required. We can mark each property on the object as required so that we will be warned if any of those properties are missing.
 
 ```js
 Product.propTypes = {
@@ -551,16 +559,17 @@ Product.propTypes = {
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     imageUrl: PropTypes.string.isRequired
-  })
+  }),
+  addToCart: PropTypes.func.isRequired
 }
 ```
 </details>
 
 ## Step 3
 
-- Open `src/CartItem.js`.
+- Open `src/components/CartItem.js`.
 - import the `prop-types` library.
-- Define the component `propTypes` after the ending curly brace of the functional component definititon.
+- Define the component `propTypes` after the ending curly brace of the functional component definition.
 - Provide the appropriate propTypes for the `item` prop being passed into the `CartItem` component.
 
 <details>
@@ -575,7 +584,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 ```
 
-We will then scroll to the bottom of the file and define the `propTypes` object for this component after the closing curly brace of the functional component.  This component is receiving a single prop: `item` which is an `Object` that has multiple product properties on it. We can specify the required properties for this object using the `PropTypes.shape` method and defining each required property of the `item` object and the corresponding data type for each of those properties. Since the items in the cart have the same data as the list of available products, the `propTypes` for this component will look almost identical to the `Product` component. Each `item` has the following properties with their associated data type: id-`Number`, title-`String`, description-`String`, price-`Number`, imageUrl-`String`. We can mark each property on the object as required so that we will be warned if any of those properties are missing. 
+We will then scroll to the bottom of the file and define the `propTypes` object for this component after the closing curly brace of the functional component.  This component is receiving a single prop: `item` which is an `Object` that has multiple product properties on it. We can specify the required properties for this object using the `PropTypes.shape` method and defining each required property of the `item` object and the corresponding data type for each of those properties. Since the items in the cart have the same data as the list of available products, the `propTypes` for this component will look almost identical to the `Product` component. Each `item` has the following properties with their associated data type: id-`Number`, title-`String`, description-`String`, price-`Number`, imageUrl-`String`. We can mark each property on the object as required so that we will be warned if any of those properties are missing.
 
 ```js
 CartItem.propTypes = {
@@ -598,7 +607,7 @@ CartItem.propTypes = {
   - `isHeader` - A boolean based off of whether the text is a header or not.
   - `text` - The string value of the text to be rendered.
 - Add the appropriate `propTypes` to the `Text` component.
-- Replace all instances of `h4` and `p` tags with our new text component with the appropraite `props`.
+- Replace all instances of `h4` and `p` tags with our new text component with the appropriate `props`.
 
 <details>
 
@@ -644,12 +653,15 @@ Text.propTypes = {
   isHeader: PropTypes.bool.isRequired
 }
 ```
+
 We can now use our new `Text` component inside the `CartItem` and `Product` components. Open `src/components/CartItem.js`, import the `Text` component after the other import.
+
 ```js
 import React from "react";
 import Text from './Text';
 ```
-We can now replace any `h4` or `p` tag with our newly imported `Text` component. For any `h4` tag, we want to set the `isHeader` prop to true, otherwise we want the `isHeader` prop to be set to false. We also want to set the information in between the `h4` or `p` tags to the `text` prop. 
+
+We can now replace any `h4` or `p` tag with our newly imported `Text` component. For any `h4` tag, we want to set the `isHeader` prop to true, otherwise we want the `isHeader` prop to be set to false. We also want to set the information in between the `h4` or `p` tags to the `text` prop.
 
 ```js
 import React from "react";
@@ -713,7 +725,8 @@ Product.propTypes = {
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     imageUrl: PropTypes.string.isRequired
-  })
+  }),
+  addToCart: PropTypes.func.isRequired
 }
 ```
 </details>
@@ -754,7 +767,8 @@ Product.propTypes = {
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     imageUrl: PropTypes.string.isRequired
-  })
+  }),
+  addToCart: PropTypes.func.isRequired
 }
 ```
 </details>
@@ -816,7 +830,42 @@ Text.propTypes = {
 ```
 </details>
 
-## Part 3 - Black Diamond
+<br>
+
+<img src="readme-assets/react-1-2-text-cart.gif" />
+
+# Part 3 - Black Diamond
+
+### Summary
+
+In this part we will add in the remove from cart function to the `CartItem` component. We will also need to add onto the prop types object to account for this. We will also add in the functionality to change the view of each card.
+
+## Step 1
+
+- Open `src/App.js`.
+- If you have not already then you will need to create a method on `App.js` called `deleteFromCart`.
+- This Method will take in an ID of the item you want to remove from the cart.
+- Have it remove the item from state then `setState` with the new array.
+- Because we are moving this method to another component make sure you bind it.
+- Then pass it down as a prop to the `CartItem` component.
+
+## Step 2
+
+- Open `src/components/CartItem`.
+- Add a button that says `remove from cart` that when clicked runs the deleteFromCart prop.
+- Also make sure to add it to your propType object at the bottom of the file.
+
+## Step 3
+
+- Open `src/App.js`.
+- If you have not already then you will need to create a method on `App.js` called `handleToggleView`.
+  - this function will change the way the product cards are displayed by toggling a boolean on state.
+- then you will need to pass that value down as a prop into each `Product` component.
+- on one of the divs inside the `Product.js` you will need to turn the `className` into a ternary.
+  - have it toggle between two different class names to based on the value passed down by props.
+- Don't forget to also add the new prop to the `Prop.Types`
+
+# Part 4 - Black Diamond
 
 ### Summary
 
@@ -827,15 +876,16 @@ In this part we will add a search bar which can filter the list of products. We 
 - Open `src/App.js`
 - In the products section under the header in App.js, create an input that will be our search bar. 
   - Store its value on state.
-  - Create an on-change event listener that will update state with the user input.
+  - Create an `onChange` event listener that will update state with the user input.
 
 ## Step 2
 
 - Change the code where we map over products to display so that we are filtering based on the user input string if the user has typed anything.
 
 ## Step 3
-- Add a navbar with a two buttons at the top of the `src/App.js`. 
-- The user should be able to toggle between Product View and Cart View, by changing a boolean value on state. 
+
+- Add a navbar with a button at the top of the `src/App.js`.
+- The user should be able to toggle between Product View and Cart View, by changing a boolean value on state.
 - Use conditional rendering (with the ternary operator), so that only one view is displayed at a time.
 
 ## Contributions
@@ -847,5 +897,5 @@ If you see a problem or a typo, please fork, make the necessary changes, and cre
 © DevMountain LLC, 2017. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
 
 <p align="center">
-<img src="https://s3.amazonaws.com/devmountain/readme-logo.png" width="250">
+  <img src="https://s3.amazonaws.com/devmountain/readme-logo.png" width="250">
 </p>
