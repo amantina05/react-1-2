@@ -15,9 +15,9 @@ On this day, we will be refactoring some of our code to take advantage of some o
 
 ## Live Example
 
-<a href="https://DevMountain.github.io/react-1-2">Click Me</a>
+<a href="https://DevMountain.github.io/react-1-1">Click Me</a>
 
-<img src="#" />
+<img src="readme-assets/finsihed.JPG" />
 
 # Part 1
 
